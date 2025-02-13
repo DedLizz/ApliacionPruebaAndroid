@@ -43,5 +43,15 @@
         app:layout_constraintStart_toStartOf="@+id/tvSaludo"
         app:layout_constraintTop_toBottomOf="@+id/etNombre" />
 
+    <Button
+        android:id="@+id/idBtnTabla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tabla"
+        app:layout_constraintBottom_toTopOf="@+id/etNombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 

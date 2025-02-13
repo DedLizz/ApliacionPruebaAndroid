@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondActivity">
+
+    <!-- Tabla de Usuarios -->
+    <TextView
+        android:id="@+id/textDosMensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Texto saludo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="272dp"
+        android:background="#DDDDDD"
+        android:padding="16dp"
+        android:stretchColumns="1,2,3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textDosMensaje">
+
+        <!-- Encabezado -->
+        <TableRow android:background="#CCCCCC">
+
+            <TextView
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:text="ID"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_weight="2"
+                android:padding="8dp"
+                android:text="Nombre"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_weight="2"
+                android:padding="8dp"
+                android:text="Apellido"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_weight="2"
+                android:padding="8dp"
+                android:text="Correo"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:text="Acción"
+                android:textStyle="bold" />
+        </TableRow>
+
+    </TableLayout>
+
+    <EditText
+        android:id="@+id/textInputNombre"
+        android:layout_width="253dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Ingrese Nombre"
+        app:layout_constraintEnd_toEndOf="@+id/textDosMensaje"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/textDosMensaje"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/textInputApellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Ingrese el apellido"
+        app:layout_constraintEnd_toEndOf="@+id/textInputNombre"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="@+id/textInputNombre"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/textInputCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="164dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="Ingrese el correo"
+        app:layout_constraintEnd_toEndOf="@+id/textInputApellido"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textInputApellido"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnGrabar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="236dp"
+        android:text="Grabar"
+        app:layout_constraintEnd_toEndOf="@+id/textInputCorreo"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/textInputCorreo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
