@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,115 +7,136 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity">
 
-    <!-- Tabla de Usuarios -->
+    <!-- Mensaje de Bienvenida -->
     <TextView
         android:id="@+id/textDosMensaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Texto saludo"
+        android:layout_marginTop="24dp"
+        android:text="Ingrese sus datos"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="272dp"
-        android:background="#DDDDDD"
-        android:padding="16dp"
-        android:stretchColumns="1,2,3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textDosMensaje">
-
-        <!-- Encabezado -->
-        <TableRow android:background="#CCCCCC">
-
-            <TextView
-                android:layout_weight="1"
-                android:padding="8dp"
-                android:text="ID"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_weight="2"
-                android:padding="8dp"
-                android:text="Nombre"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_weight="2"
-                android:padding="8dp"
-                android:text="Apellido"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_weight="2"
-                android:padding="8dp"
-                android:text="Correo"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_weight="1"
-                android:padding="8dp"
-                android:text="Acción"
-                android:textStyle="bold" />
-        </TableRow>
-
-    </TableLayout>
-
-    <EditText
-        android:id="@+id/textInputNombre"
-        android:layout_width="253dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="64dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Ingrese Nombre"
-        app:layout_constraintEnd_toEndOf="@+id/textDosMensaje"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/textDosMensaje"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/textInputApellido"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Ingrese el apellido"
-        app:layout_constraintEnd_toEndOf="@+id/textInputNombre"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="@+id/textInputNombre"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/textInputCorreo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="Ingrese el correo"
-        app:layout_constraintEnd_toEndOf="@+id/textInputApellido"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textInputApellido"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnGrabar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="236dp"
+        android:layout_marginTop="308dp"
+        android:backgroundTint="@color/teal_700"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="12dp"
         android:text="Grabar"
-        app:layout_constraintEnd_toEndOf="@+id/textInputCorreo"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/textInputCorreo"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Scroll vertical + horizontal -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="28dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/btnGrabar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+                android:padding="8dp"
+                android:stretchColumns="*">
+
+                <TableRow android:background="@color/dark_green">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="ID"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Nombre"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Apellido"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Correo"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Acción"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </TableRow>
+            </TableLayout>
+        </HorizontalScrollView>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputApellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="152dp"
+        android:inputType="text"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:inputType="text"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="232dp"
+        android:inputType="textEmailAddress"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-32dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
