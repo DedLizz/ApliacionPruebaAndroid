@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Referencia al boton de la segunda actividad
         Button btnIrTabla = findViewById(R.id.idBtnTabla);
+        // Referencia al boton de la tercera actividad
+        Button btnIrTabla2 = findViewById(R.id.idBtnTabla2);
 
         //evento click del boton para mandar mensaje
         btnSaludar.setOnClickListener(new View.OnClickListener(){
@@ -42,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //eveto clic del boton "TABLA 2" para mostrar la actividad activity_tercera
+        btnIrTabla2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, TerceraActivity.class);
                 startActivity(intent);
             }
         });

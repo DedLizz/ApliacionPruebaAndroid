@@ -9,11 +9,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.primeraaplicacion.controller.UsuarioController;
 import com.example.primeraaplicacion.model.Usuario;
@@ -36,11 +32,11 @@ public class SecondActivity extends AppCompatActivity {
 
         // ! logíca de la tabla
         usuarioController = new UsuarioController();
-        tableLayout = findViewById(R.id.tableLayout);
-        textInputNombre = findViewById(R.id.textInputNombre);
-        textInputApellido = findViewById(R.id.textInputApellido);
-        textInputEmail = findViewById(R.id.textInputCorreo);
-        Button btnAgregar = findViewById(R.id.btnGrabar);
+        tableLayout = findViewById(R.id.tableLayout2);
+        textInputNombre = findViewById(R.id.textInputNombre2);
+        textInputApellido = findViewById(R.id.textInputApellido2);
+        textInputEmail = findViewById(R.id.textInputCorreo2);
+        Button btnAgregar = findViewById(R.id.btnGrabar2);
 
         // ! Agregar usuario cuando el botón sea presionado
         btnAgregar.setOnClickListener(new View.OnClickListener() {
